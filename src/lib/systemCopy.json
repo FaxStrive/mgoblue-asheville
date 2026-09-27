@@ -1,0 +1,106 @@
+{
+  "water-filtration": {
+    "headline": "Whole-Home Water Filtration",
+    "subhead": "Every tap in your home filtered clean. Remove chlorine, sediment, and harmful contaminants for drinking water that tastes the way it should.",
+    "eyebrow": "Water Filtration Systems",
+    "features": [
+      "Removes chlorine, chloramines, and disinfection byproducts",
+      "Filters sediment, rust, and particulates down to 5 microns",
+      "Reduces heavy metals including lead and arsenic",
+      "No change in water pressure",
+      "Low-maintenance cartridge replacement"
+    ],
+    "faq": [
+      {
+        "question": "How often do I need to replace the filter cartridges?",
+        "answer": "Most whole-home filter cartridges last 6 to 12 months depending on your water quality and household usage. We recommend an annual service visit to check your system and swap cartridges before they reach capacity."
+      },
+      {
+        "question": "Will a whole-home filter reduce my water pressure?",
+        "answer": "A properly sized system has no noticeable effect on pressure. We size every system to your home's flow rate so you get clean water without trade-offs."
+      },
+      {
+        "question": "Is a whole-home filter different from a water softener?",
+        "answer": "Yes. A filter removes particulates and chemicals. A softener removes hardness minerals like calcium and magnesium. Many households benefit from both, and we can help you decide what your water actually needs."
+      }
+    ]
+  },
+  "water-softeners": {
+    "headline": "Water Softener Systems",
+    "subhead": "Protect your appliances, eliminate scale buildup, and notice the difference in your skin and hair within the first week.",
+    "eyebrow": "Water Softener Systems",
+    "features": [
+      "Removes calcium and magnesium that cause hard water scale",
+      "Extends the life of water heaters, dishwashers, and washing machines",
+      "Leaves skin and hair noticeably softer",
+      "Reduces soap and detergent usage",
+      "Salt-based and salt-free options available"
+    ],
+    "faq": [
+      {
+        "question": "How do I know if I have hard water?",
+        "answer": "Signs include white scale buildup on faucets and showerheads, spots on glassware and dishes, and skin that feels dry or filmy after showering. We offer free water testing to confirm hardness levels."
+      },
+      {
+        "question": "Do water softeners waste a lot of water?",
+        "answer": "Modern high-efficiency softeners use significantly less water and salt than older models. We size your system to your household demand so regeneration cycles use only what is needed."
+      },
+      {
+        "question": "Is softened water safe to drink?",
+        "answer": "Softened water is safe for most people. The ion exchange process adds a small amount of sodium. If sodium intake is a concern, we can add a reverse osmosis drinking water system at the kitchen sink."
+      }
+    ]
+  },
+  "water-filters": {
+    "headline": "Point-of-Use Water Filters",
+    "subhead": "Great-tasting drinking water directly at your kitchen sink. No bottles to buy, no plastic waste, no second-guessing what is in your glass.",
+    "eyebrow": "Point-of-Use Filters",
+    "features": [
+      "Under-sink reverse osmosis removes 99% of dissolved contaminants",
+      "Dedicated filtered water tap at the kitchen sink",
+      "No plastic bottles or delivery subscriptions",
+      "Crystal-clear, great-tasting water every day",
+      "Annual filter replacement typically under $50"
+    ],
+    "faq": [
+      {
+        "question": "What is the difference between a filter and reverse osmosis?",
+        "answer": "A standard filter removes sediment and some chemicals. Reverse osmosis (RO) goes further, pushing water through a semi-permeable membrane to remove dissolved solids, nitrates, arsenic, and most other contaminants. RO produces the cleanest drinking water available without distillation."
+      },
+      {
+        "question": "How much does the installation cost?",
+        "answer": "Installation cost depends on the system and your sink configuration. We provide a firm quote before any work begins. Point-of-use systems also qualify for our $200 off promotion."
+      },
+      {
+        "question": "Will it fit under my sink?",
+        "answer": "Most under-sink RO systems fit in standard cabinet space. We assess your cabinet before recommending a unit to ensure a clean, professional installation."
+      }
+    ]
+  },
+  "well-water": {
+    "headline": "Well Water Treatment Systems",
+    "subhead": "Well water in Western North Carolina comes with unique challenges. Iron, bacteria, hardness, and pH imbalances all require targeted solutions.",
+    "eyebrow": "Well Water Treatment",
+    "features": [
+      "Iron and manganese removal",
+      "Bacteria and pathogen treatment with UV disinfection",
+      "pH correction and acid neutralization",
+      "Hydrogen sulfide (rotten egg odor) elimination",
+      "Hardness treatment for well sources"
+    ],
+    "faq": [
+      {
+        "question": "How do I know what is in my well water?",
+        "answer": "We start with a comprehensive water test that identifies every issue before we recommend a solution. Treating problems you do not have wastes money; missing problems you do have is worse."
+      },
+      {
+        "question": "Is my well water safe to drink without treatment?",
+        "answer": "Well water is not regulated by the EPA the way municipal water is. Contamination from iron, bacteria, nitrates, or other sources is common in private wells. A professional test gives you a clear answer."
+      },
+      {
+        "question": "Does well water treatment require a lot of maintenance?",
+        "answer": "A properly sized and installed system requires minimal upkeep. Most systems need an annual service visit to check media, replace UV bulbs, or add salt. We walk every customer through their system before we leave."
+      }
+    ]
+  }
+}

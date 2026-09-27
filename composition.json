@@ -1,0 +1,25 @@
+{
+  "client": "mgoblue-asheville",
+  "company": "Pure Home 365 Asheville",
+  "builtAt": "2026-09-27",
+  "pipeline": "webmast-v3",
+  "styleClass": "corporate-professional",
+  "archetype": "diagram-led-explainer",
+  "primaryColor": "#155dfc",
+  "pages": [
+    { "route": "/", "title": "Home", "sections": 11 },
+    { "route": "/services", "title": "Services", "sections": 6 },
+    { "route": "/services/water-filtration", "title": "Water Filtration" },
+    { "route": "/services/water-softeners", "title": "Water Softeners" },
+    { "route": "/services/water-filters", "title": "Water Filters" },
+    { "route": "/services/well-water", "title": "Well Water Treatment" },
+    { "route": "/about", "title": "About", "sections": 6 },
+    { "route": "/service-areas", "title": "Service Areas", "sections": 3 },
+    { "route": "/faq", "title": "FAQ", "sections": 4 },
+    { "route": "/contact", "title": "Contact", "sections": 2 }
+  ],
+  "assets": {
+    "logo": "/images/logo.png",
+    "heroVideo": "/video/hero.mp4"
+  }
+}

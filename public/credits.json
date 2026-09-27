@@ -1,0 +1,97 @@
+{
+  "images": [
+    {
+      "path": "/images/hero-poster.jpg",
+      "provider": "pexels",
+      "id": "7653312",
+      "licence": "Pexels Licence",
+      "url": "https://www.pexels.com/photo/7653312/"
+    },
+    {
+      "path": "/images/filter-system.jpg",
+      "provider": "pexels",
+      "id": "12975468",
+      "licence": "Pexels Licence",
+      "url": "https://www.pexels.com/photo/12975468/"
+    },
+    {
+      "path": "/images/water-glass.jpg",
+      "provider": "pexels",
+      "id": "24802113",
+      "licence": "Pexels Licence",
+      "url": "https://www.pexels.com/photo/24802113/"
+    },
+    {
+      "path": "/images/softener-1.jpg",
+      "provider": "pexels",
+      "id": "8774382",
+      "licence": "Pexels Licence",
+      "url": "https://www.pexels.com/photo/8774382/"
+    },
+    {
+      "path": "/images/softener-2.jpg",
+      "provider": "pexels",
+      "id": "5591837",
+      "licence": "Pexels Licence",
+      "url": "https://www.pexels.com/photo/5591837/"
+    },
+    {
+      "path": "/images/softener-3.jpg",
+      "provider": "pexels",
+      "id": "8774638",
+      "licence": "Pexels Licence",
+      "url": "https://www.pexels.com/photo/8774638/"
+    },
+    {
+      "path": "/images/softener-4.jpg",
+      "provider": "pexels",
+      "id": "12726229",
+      "licence": "Pexels Licence",
+      "url": "https://www.pexels.com/photo/12726229/"
+    },
+    {
+      "path": "/images/kitchen-water-1.jpg",
+      "provider": "pexels",
+      "id": "6210568",
+      "licence": "Pexels Licence",
+      "url": "https://www.pexels.com/photo/6210568/"
+    },
+    {
+      "path": "/images/kitchen-water-2.jpg",
+      "provider": "pexels",
+      "id": "3371398",
+      "licence": "Pexels Licence",
+      "url": "https://www.pexels.com/photo/3371398/"
+    },
+    {
+      "path": "/images/kitchen-water-3.jpg",
+      "provider": "pexels",
+      "id": "7402626",
+      "licence": "Pexels Licence",
+      "url": "https://www.pexels.com/photo/7402626/"
+    },
+    {
+      "path": "/images/water-treatment.jpg",
+      "provider": "pexels",
+      "id": "36019807",
+      "licence": "Pexels Licence",
+      "url": "https://www.pexels.com/photo/36019807/"
+    },
+    {
+      "path": "/images/logo.png",
+      "provider": "client",
+      "id": "client-supplied",
+      "licence": "Client-supplied asset",
+      "url": "https://veracious-poodle-315.convex.cloud/api/storage/134d66da-171c-4163-9b4f-b188bfa2b289"
+    }
+  ],
+  "videos": [
+    {
+      "path": "/video/hero.mp4",
+      "provider": "pexels",
+      "id": "6004936",
+      "licence": "Pexels Licence",
+      "url": "https://www.pexels.com/video/6004936/"
+    }
+  ]
+}

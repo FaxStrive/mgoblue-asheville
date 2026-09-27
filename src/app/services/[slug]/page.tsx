@@ -1,39 +1,28 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { facts } from "@/lib/facts";
-import { slugify } from "@/lib/slug";
-
-// This is the seed's own service detail route: plain, and self-sufficient
-// from @/lib/facts alone. A fresh scaffold made from nothing but a facts
-// file has no section library, no src/lib/systemImages.ts and no
-// src/lib/systemCopy.json, so this route imports none of them. The rich
-// version lives at templates/components/routes/service-detail.tsx and is
-// copied over this file by the BUILD stage once those three prerequisites
-// exist - see personas/sites-stages/build.md, "The service detail route".
-// Until that overlay runs, this is what every service page is.
-
-// No image file is named here, and none should ever be added directly to
-// this route. A photograph belongs to exactly one client, so a shared
-// template that every build starts from can never hardcode a path -
-// bin/assert-pre-ship gate 10 fails any image it cannot resolve through
-// public/credits.json, and a literal path here would be another client's
-// photo on this one's site.
-
-// No money amount appears on this page, ever. A dollar figure, a monthly
-// payment or a financing percentage is that client's own commercial term,
-// never a template default - it comes from the client's own record at
-// build time, in the BUILD-stage overlay, not from this file.
+import { systemImage } from "@/lib/systemImages";
+import systemCopyData from "@/lib/systemCopy.json";
+import VideoHero from "@/components/sections/VideoHero";
+import WhySystems from "@/components/sections/WhySystems";
+import Process from "@/components/sections/Process";
+import Faq from "@/components/sections/Faq";
+import SystemsGrid from "@/components/sections/SystemsGrid";
+import ClosingCta from "@/components/sections/ClosingCta";
+import Divider from "@/components/sections/CurvedEdge";
 
 interface ServicePageParams {
   slug: string;
 }
 
 function findService(slug: string) {
-  return facts.services.find((service) => slugify(service.name) === slug);
+  return facts.services.find((s) => s.slug === slug);
 }
 
+type SystemCopyKey = keyof typeof systemCopyData;
+
 export function generateStaticParams(): ServicePageParams[] {
-  return facts.services.map((service) => ({ slug: slugify(service.name) }));
+  return facts.services.map((s) => ({ slug: s.slug }));
 }
 
 export async function generateMetadata({
@@ -47,12 +36,14 @@ export async function generateMetadata({
     return { title: "Service not found" };
   }
   return {
-    title: service.name,
+    title: `${service.name} in Asheville, NC`,
     description: service.description,
+    openGraph: {
+      title: `${service.name} | Pure Home 365 Asheville`,
+      description: service.description,
+    },
   };
 }
-
-const phoneDigits = facts.phone ? facts.phone.replace(/[^0-9]/g, "") : undefined;
 
 export default async function ServiceDetailPage({
   params,
@@ -66,55 +57,100 @@ export default async function ServiceDetailPage({
     notFound();
   }
 
-  const otherServices = facts.services.filter((entry) => entry.name !== service.name);
+  const copy = systemCopyData[slug as SystemCopyKey];
+  const otherServices = facts.services.filter((s) => s.slug !== slug);
 
   return (
     <main>
-      <section className="section">
-        <div className="shell">
-          <p className="eyebrow">Services</p>
-          <h1 style={{ marginTop: "18px", maxWidth: "20ch" }}>{service.name}</h1>
-          <p className="lede" style={{ marginTop: "28px", maxWidth: "54ch" }}>
-            {service.description}
-          </p>
-          <div style={{ marginTop: "40px", display: "flex", gap: "16px", flexWrap: "wrap" }}>
-            <a className="btn btn-primary" href="/contact">
-              Get in touch
-            </a>
-            {phoneDigits ? (
-              <a className="btn" href={`tel:${phoneDigits}`}>
-                Call {facts.phone}
-              </a>
-            ) : null}
-          </div>
-        </div>
-      </section>
+      {/* Hero */}
+      <VideoHero
+        variant="split"
+        eyebrow={copy?.eyebrow ?? "Water Treatment"}
+        headline={copy?.headline ?? service.name}
+        subhead={copy?.subhead ?? service.description}
+        posterSrc={systemImage(slug)}
+        posterAlt={`${service.name} system`}
+        primaryCtaLabel="Get a Free Quote"
+        primaryCtaHref="/contact"
+        secondaryCtaLabel={`Call ${facts.phone}`}
+        secondaryCtaHref={facts.phoneHref}
+      />
 
-      {otherServices.length > 0 ? (
-        <section className="section on-alt">
-          <div className="shell">
-            <h2 style={{ maxWidth: "18ch" }}>Other services</h2>
-            <ul
-              style={{
-                marginTop: "40px",
-                display: "grid",
-                gap: "16px",
-                gridTemplateColumns: "repeat(auto-fit, minmax(220px, 1fr))",
-                listStyle: "none",
-                padding: 0,
-              }}
-            >
-              {otherServices.map((other) => (
-                <li key={other.name} style={{ borderTop: "1px solid var(--color-border)", paddingTop: "18px" }}>
-                  <a href={`/services/${slugify(other.name)}`} className="font-semibold">
-                    {other.name}
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </div>
-        </section>
+      {/* Features */}
+      {copy?.features && copy.features.length >= 3 ? (
+        <>
+          <WhySystems
+            eyebrow="What You Get"
+            headline={`What our ${service.name.toLowerCase()} systems deliver`}
+            tone="light"
+            variant="numbered-list"
+            reasons={copy.features.map((f) => ({ title: f, body: "" }))}
+            ctaLabel="Schedule a Free Water Test"
+            ctaHref="/contact"
+          />
+          <Divider into="alt" direction="down" />
+        </>
       ) : null}
+
+      {/* How it works */}
+      <Process
+        eyebrow="Our Process"
+        headline="How we get your system running"
+        tone="light"
+        variant="diagram"
+        steps={[
+          { title: "Free Water Test", description: "We test your water on-site at no charge to identify exactly what your home needs." },
+          { title: "System Recommendation", description: "We explain the results and recommend a system sized for your household and water source." },
+          { title: "Professional Installation", description: "Our team installs your system and verifies performance before we leave." },
+          { title: "Ongoing Support", description: "We answer questions and provide service when your system needs attention." },
+        ]}
+      />
+
+      <Divider into="light" direction="up" />
+
+      {/* FAQ */}
+      {copy?.faq && copy.faq.length > 0 ? (
+        <Faq
+          eyebrow="Questions"
+          headline={`Common questions about ${service.name.toLowerCase()}`}
+          items={copy.faq}
+        />
+      ) : null}
+
+      {/* Other services */}
+      {otherServices.length > 0 ? (
+        <>
+          <Divider into="alt" direction="down" />
+          <SystemsGrid
+            eyebrow="Other Services"
+            headline="We handle every water problem"
+            tone="alt"
+            items={otherServices.map((s) => ({
+              name: s.name,
+              blurb: s.blurb,
+              href: `/services/${s.slug}`,
+              imageSrc: systemImage(s.slug),
+              imageAlt: `${s.name} system`,
+            }))}
+          />
+          <Divider into="dark" direction="down" />
+        </>
+      ) : (
+        <Divider into="dark" direction="down" />
+      )}
+
+      {/* Closing CTA */}
+      <ClosingCta
+        variant="split"
+        headline={`Ready to improve your ${service.name.toLowerCase()}?`}
+        subhead="Schedule a free water test and get a system recommendation specific to your home. No obligation."
+        primaryCtaLabel="Get a Free Quote"
+        primaryCtaHref="/contact"
+        secondaryCtaLabel={`Call ${facts.phone}`}
+        secondaryCtaHref={facts.phoneHref}
+        posterSrc={systemImage(slug)}
+        posterAlt={`${service.name} system installed`}
+      />
     </main>
   );
 }
