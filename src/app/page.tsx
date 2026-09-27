@@ -28,7 +28,7 @@ export default function HomePage() {
         variant="full-bleed"
         eyebrow="Asheville, NC Water Treatment Experts"
         headline="Clean Water, Customized for Your Home"
-        subhead="We build the right system for your water — whether you're on city supply or a private well. Local company. Real expertise. No surprises."
+        subhead="We build the right system for your water, whether you are on city supply or a private well. Local company. Real expertise. No surprises."
         videoSrc="/video/hero.mp4"
         posterSrc="/images/hero-poster.jpg"
         posterAlt="Clean water flowing from a kitchen tap"
@@ -62,7 +62,7 @@ export default function HomePage() {
           },
           {
             title: "Options for every budget",
-            body: "From whole-home systems to point-of-use filters, we carry solutions at a range of price points. Financing available from $96/month with $0 down.",
+            body: "From whole-home systems to point-of-use filters, we carry solutions at a range of price points. Financing options are available. Contact us for details.",
           },
           {
             title: "A local company you can call",
@@ -207,7 +207,7 @@ export default function HomePage() {
           },
           {
             question: "Do you offer financing?",
-            answer: "Yes. Our whole-home system is available from $96 per month with $0 down after a quick credit check. We also have buy-now options with discounts for credit card payment.",
+            answer: "Yes. We offer monthly financing on whole-home systems with no money down after credit approval. We also have buy-now options with discounts for upfront payment. See our offers on the contact page.",
           },
           {
             question: "How long does installation take?",
